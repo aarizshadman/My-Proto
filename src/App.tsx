@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, lazy, Suspense } from 'react';
 import { portfolioData } from './data/portfolioData';
 import { Project, Essay } from './types';
 import { Header } from './components/Header';
@@ -10,12 +10,22 @@ import { Writing } from './components/Writing';
 import { ReadingShelf } from './components/ReadingShelf';
 import { Timeline } from './components/Timeline';
 import { Contact } from './components/Contact';
-import { ProjectModal } from './components/ProjectModal';
-import { EssayModal } from './components/EssayModal';
-import { ResumeModal } from './components/ResumeModal';
-import { CommandPalette } from './components/CommandPalette';
 import { Toast } from './components/Toast';
 import { Reveal } from './components/Reveal';
+
+// Lazy-load modal overlays so initial page bundle is as light as possible
+const ProjectModal = lazy(() =>
+  import('./components/ProjectModal').then((m) => ({ default: m.ProjectModal }))
+);
+const EssayModal = lazy(() =>
+  import('./components/EssayModal').then((m) => ({ default: m.EssayModal }))
+);
+const ResumeModal = lazy(() =>
+  import('./components/ResumeModal').then((m) => ({ default: m.ResumeModal }))
+);
+const CommandPalette = lazy(() =>
+  import('./components/CommandPalette').then((m) => ({ default: m.CommandPalette }))
+);
 
 export const App: React.FC = () => {
   // Theme state with local persistence and system fallback
@@ -218,32 +228,42 @@ export const App: React.FC = () => {
         </button>
       )}
 
-      {/* Modals & Dialogs */}
-      <ProjectModal
-        project={selectedProject}
-        onClose={() => setSelectedProject(null)}
-      />
+      {/* Modals & Dialogs (Loaded dynamically on user interaction) */}
+      <Suspense fallback={null}>
+        {selectedProject && (
+          <ProjectModal
+            project={selectedProject}
+            onClose={() => setSelectedProject(null)}
+          />
+        )}
 
-      <EssayModal
-        essay={selectedEssay}
-        onClose={() => setSelectedEssay(null)}
-        onShowToast={showToast}
-      />
+        {selectedEssay && (
+          <EssayModal
+            essay={selectedEssay}
+            onClose={() => setSelectedEssay(null)}
+            onShowToast={showToast}
+          />
+        )}
 
-      <ResumeModal
-        isOpen={isResumeOpen}
-        onClose={() => setIsResumeOpen(false)}
-      />
+        {isResumeOpen && (
+          <ResumeModal
+            isOpen={isResumeOpen}
+            onClose={() => setIsResumeOpen(false)}
+          />
+        )}
 
-      <CommandPalette
-        isOpen={isCmdOpen}
-        onClose={() => setIsCmdOpen(false)}
-        onSelectProject={(project) => setSelectedProject(project)}
-        onSelectEssay={(essay) => setSelectedEssay(essay)}
-        onToggleTheme={toggleTheme}
-        onCopyEmail={handleCopyEmail}
-        onOpenResumeModal={() => setIsResumeOpen(true)}
-      />
+        {isCmdOpen && (
+          <CommandPalette
+            isOpen={isCmdOpen}
+            onClose={() => setIsCmdOpen(false)}
+            onSelectProject={(project) => setSelectedProject(project)}
+            onSelectEssay={(essay) => setSelectedEssay(essay)}
+            onToggleTheme={toggleTheme}
+            onCopyEmail={handleCopyEmail}
+            onOpenResumeModal={() => setIsResumeOpen(true)}
+          />
+        )}
+      </Suspense>
 
       {/* Subtle Toast Feedback */}
       <Toast message={toastMessage} />

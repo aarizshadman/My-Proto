@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { portfolioData } from '../data/portfolioData';
 import contactArt from '../assets/contact-art.webp';
 
@@ -191,10 +191,14 @@ const Web3ContactForm: React.FC<Web3ContactFormProps> = ({ onClose }) => {
     setStatus('sending');
     setErrorMsg('');
 
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 12000);
+
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
         method:  'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        signal:  controller.signal,
         body: JSON.stringify({
           access_key: WEB3FORMS_ACCESS_KEY,
           name,
@@ -205,6 +209,7 @@ const Web3ContactForm: React.FC<Web3ContactFormProps> = ({ onClose }) => {
         }),
       });
 
+      clearTimeout(timeoutId);
       const data = await res.json();
 
       if (data.success) {
@@ -214,9 +219,14 @@ const Web3ContactForm: React.FC<Web3ContactFormProps> = ({ onClose }) => {
         setStatus('error');
         setErrorMsg(data.message || 'Something went wrong. Please try again.');
       }
-    } catch {
+    } catch (err: unknown) {
+      clearTimeout(timeoutId);
       setStatus('error');
-      setErrorMsg('Network error. Please check your connection and try again.');
+      if (err instanceof Error && err.name === 'AbortError') {
+        setErrorMsg('Request timed out. Please try again.');
+      } else {
+        setErrorMsg('Network error. Please check your connection and try again.');
+      }
     }
   };
 
