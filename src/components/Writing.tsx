@@ -25,8 +25,8 @@ export const Writing: React.FC<WritingProps> = ({ onSelectEssay }) => {
               <img
                 src={writingArt}
                 alt="Hand-drawn colored pencil illustration of a fine-nib fountain pen on deckle-edge notes paper with ripples and an origami crane taking flight"
-                width={1200}
-                height={896}
+                width={800}
+                height={597}
                 loading="lazy"
                 decoding="async"
               />

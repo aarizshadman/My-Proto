@@ -55,8 +55,8 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
               <img
                 src={projectsArt}
                 alt="Hand-drawn architectural blueprint illustration of modular systems data blocks, mechanical gears, circuits, and network nodes"
-                width={1200}
-                height={896}
+                width={800}
+                height={597}
                 loading="lazy"
                 decoding="async"
               />

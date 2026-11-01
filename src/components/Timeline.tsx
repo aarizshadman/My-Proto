@@ -19,8 +19,8 @@ export const Timeline: React.FC = () => {
               <img
                 src={journeyArt}
                 alt="Hand-drawn colored pencil illustration of an antique celestial astrolabe with compass star and winding contour path with milestone flags"
-                width={1200}
-                height={896}
+                width={800}
+                height={597}
                 loading="lazy"
                 decoding="async"
               />

@@ -24,9 +24,10 @@ export const Hero: React.FC<HeroProps> = ({ onCopyEmail, onOpenResumeModal }) =>
           <img
             src={portrait}
             alt="Pen-and-ink illustrated portrait of Aariz Shadman"
-            width={512}
-            height={512}
+            width={768}
+            height={768}
             loading="eager"
+            fetchPriority="high"
             decoding="async"
           />
         </div>

@@ -157,9 +157,9 @@ export const Pathways: React.FC = () => {
               <img
                 src={cubeArt}
                 alt="Hand-drawn illustration of two hands solving a Rubik's cube marked with −1 and 0"
-                width={2048}
-                height={1146}
-                loading="lazy"
+                width={1200}
+                height={675}
+                loading="eager"
                 decoding="async"
               />
             </div>

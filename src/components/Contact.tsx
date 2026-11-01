@@ -28,8 +28,8 @@ export const Contact: React.FC<ContactProps> = ({ onCopyEmail, onOpenResumeModal
                 <img
                   src={contactArt}
                   alt="Hand-drawn colored pencil illustration of an open wax-sealed envelope with a soaring origami paper airplane and flight trail"
-                  width={1200}
-                  height={896}
+                  width={800}
+                  height={597}
                   loading="lazy"
                   decoding="async"
                 />

@@ -22,8 +22,8 @@ export const Currently: React.FC = () => {
               <img
                 src={currentlyArt}
                 alt="Hand-drawn colored pencil sketch of an open field notebook with data tree diagrams, precision brass compass, caliper, and glowing prism"
-                width={1200}
-                height={896}
+                width={800}
+                height={597}
                 loading="lazy"
                 decoding="async"
               />

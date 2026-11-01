@@ -20,8 +20,8 @@ export const ReadingShelf: React.FC = () => {
               <img
                 src={readingArt}
                 alt="Hand-drawn colored pencil illustration of a stack of clothbound classic books with an open book revealing abstract syntax trees and orbital rings"
-                width={1200}
-                height={896}
+                width={800}
+                height={597}
                 loading="lazy"
                 decoding="async"
               />
