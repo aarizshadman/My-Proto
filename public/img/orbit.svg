@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="none" aria-hidden="true">
+  <g stroke="#253533" stroke-opacity="0.5" stroke-width="1.5">
+    <ellipse cx="320" cy="320" rx="300" ry="120" stroke-dasharray="6 10" transform="rotate(-18 320 320)"/>
+    <ellipse cx="320" cy="320" rx="255" ry="98" stroke-dasharray="4 12" transform="rotate(14 320 320)"/>
+    <ellipse cx="320" cy="320" rx="200" ry="200" stroke-dasharray="2 14" transform="rotate(-6 320 320)" stroke-opacity="0.35"/>
+    <ellipse cx="320" cy="320" rx="150" ry="60" stroke-dasharray="8 8" transform="rotate(38 320 320)"/>
+  </g>
+  <g fill="#253533">
+    <circle cx="612" cy="221" r="6"/>
+    <circle cx="97" cy="414" r="5"/>
+    <circle cx="149" cy="177" r="4"/>
+  </g>
+  <g fill="#ee7d54">
+    <circle cx="320" cy="320" r="8"/>
+    <circle cx="471" cy="462" r="5"/>
+  </g>
+  <g fill="#2b46c4">
+    <circle cx="210" cy="250" r="5"/>
+    <circle cx="452" cy="200" r="4"/>
+  </g>
+  <circle cx="393" cy="380" r="4" fill="#4c8a55"/>
+</svg>

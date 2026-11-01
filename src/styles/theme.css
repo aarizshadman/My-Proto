@@ -1,0 +1,116 @@
+/* ========================================================================
+   THEME TOKENS & TYPOGRAPHY SYSTEM
+   Inspired by South Park Commons & classic editorial publishing:
+   Warm parchment, deep charcoal ink, literary serifs, and crisp monospaces.
+   ======================================================================== */
+
+:root {
+  /* Color Palette - Light Mode (Warm Paper / Editorial Cream) */
+  --bg-primary: #fbfbf9;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #ffffff;
+  --bg-subtle: #f4f3ee;
+  --bg-hover: #ecebe4;
+  --bg-code: #f0efe8;
+  
+  --text-primary: #181816;
+  --text-secondary: #52524d;
+  --text-muted: #73736c;
+  --text-inverted: #fbfbf9;
+  
+  --border-subtle: rgba(24, 24, 22, 0.07);
+  --border-medium: rgba(24, 24, 22, 0.14);
+  --border-strong: rgba(24, 24, 22, 0.28);
+
+  /* Editorial Accent: Warm Terracotta / Amber Ink */
+  --accent-primary: #b85028;
+  --accent-hover: #9c411d;
+  --accent-soft: rgba(184, 80, 40, 0.08);
+  --accent-border: rgba(184, 80, 40, 0.22);
+  --accent-text: #9c411d;
+
+  /* Status Colors */
+  --status-active-bg: rgba(38, 128, 77, 0.1);
+  --status-active-text: #1d6e40;
+  --status-active-dot: #26804d;
+
+  /* Typography */
+  --font-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Editorial Band Tints (South Park Commons palette) */
+  --color-slate: #253533;
+  --band-floral: #fdfaf3;
+  --band-ghost: #f1f2eb;
+  --band-steel: #dde5ed;
+  --band-milan: #f8d9c8;
+  --band-honeydew: #eaf4e3;
+  --art-surface: #ffffff;
+  --squiggle-opacity: 1;
+
+  /* Spacing & Layout */
+  --container-max-width: 780px;
+  --container-wide-width: 960px;
+  --header-max-width: 1120px;
+  --header-height: 64px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-card: 18px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(24, 24, 22, 0.04);
+  --shadow-md: 0 4px 12px rgba(24, 24, 22, 0.06);
+  --shadow-lg: 0 12px 32px rgba(24, 24, 22, 0.08);
+  --shadow-modal: 0 24px 64px rgba(24, 24, 22, 0.16);
+
+  /* Micro-animation timing */
+  --transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-medium: 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Dark Mode Tokens (Deep Obsidian / Warm Charcoal) */
+[data-theme='dark'] {
+  --bg-primary: #111110;
+  --bg-surface: #181816;
+  --bg-surface-elevated: #20201d;
+  --bg-subtle: #1e1e1b;
+  --bg-hover: #262622;
+  --bg-code: #1c1c19;
+
+  --text-primary: #f2f2ee;
+  --text-secondary: #a8a8a0;
+  --text-muted: #797972;
+  --text-inverted: #111110;
+
+  --border-subtle: rgba(242, 242, 238, 0.08);
+  --border-medium: rgba(242, 242, 238, 0.15);
+  --border-strong: rgba(242, 242, 238, 0.28);
+
+  --accent-primary: #e07446;
+  --accent-hover: #ea8559;
+  --accent-soft: rgba(224, 116, 70, 0.12);
+  --accent-border: rgba(224, 116, 70, 0.28);
+  --accent-text: #f0895e;
+
+  --status-active-bg: rgba(56, 178, 107, 0.14);
+  --status-active-text: #48c77e;
+  --status-active-dot: #48c77e;
+
+  /* Editorial Band Tints — deep warm counterparts */
+  --color-slate: #e6e6df;
+  --band-floral: #15150f;
+  --band-ghost: #14150f;
+  --band-steel: #10151b;
+  --band-milan: #1c1410;
+  --band-honeydew: #101510;
+  --art-surface: #f4f1e9;
+  --squiggle-opacity: 0.85;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.5);
+  --shadow-modal: 0 24px 64px rgba(0, 0, 0, 0.7);
+}

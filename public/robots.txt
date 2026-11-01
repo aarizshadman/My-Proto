@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aarizshadman.dev/sitemap.xml
