@@ -13,7 +13,7 @@ export const portfolioData: PortfolioData = {
     name: 'Aariz Shadman',
     pronouns: 'he/him',
     title: 'Student & Software Builder',
-    location: 'Bengaluru, India',
+    location: 'New Delhi , India',
     university: 'Undergraduate in Computer Science',
     degree: 'B.Tech in Computer Science & Engineering',
     expectedGraduation: '2026',
