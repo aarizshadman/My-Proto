@@ -7,8 +7,6 @@ Built with **React 19**, **TypeScript**, **Vite**, and **pure semantic CSS**.
 ---
 
 ## Highlights
-
-- **South Park Commons Inspired Aesthetics**: Editorial typography pairing (`Newsreader` serif + `Plus Jakarta Sans` + `JetBrains Mono` for metadata), warm paper parchment light mode, and deep obsidian dark mode.
 - **Centralized Data Store**: All personal info, projects, essays, reading recommendations, and timeline milestones are located in [`src/data/portfolioData.ts`](./src/data/portfolioData.ts) for effortless editing.
 - **Zero Heavy UI Dependencies**: Pure React + TypeScript + custom CSS. No bloated CSS frameworks or tracking scripts, ensuring sub-second page loads.
 - **Interactive Deep Dives**:
